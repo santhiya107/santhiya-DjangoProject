@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+    .box{
+        margin-left:700px;
+        margin-top:180px;
+    }
+    #b1{margin-top:-150px;
+        margin-left:1000px;
+    }
+    input{
+        margin-bottom:20px;
+        margin-left:50px;
+    }
+    h1{
+        text-align:center;
+        padding-top:20px;
+    }
+    .form-control{
+        width:30%;
+    }
+    #picture{
+        margin-left:0px;
+    }
+</style>
+</head><h1>Create profile</h1>
+<hr  style="height:3px;border-width:0;color:gray;background-color:gray" >
+<body >
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="box">
+         {% comment %} {{form.as_p}}  {% endcomment %}
+        {{form.full_name}}<br>
+
+        {{form.profession}}<br>
+       {{form.contact}}<br>
+       {{form.country}}<br>
+       <span id="picture">{{form.profile_pic}}</span>
+        </div>
+       
+        <br><button id="b1" class="btn btn-primary" type="submit">update</button>
+    </form>
+    
+</body>
+</html>
